@@ -7,6 +7,7 @@ import { Nav } from '../components/layout/Nav';
 import { Sidebar } from '../components/layout/Sidebar';
 import { Footer } from '../components/layout/Footer';
 import { Crear } from '../components/pages/Crear';
+import { Busqueda } from '../components/pages/Busqueda';
 
 
 export const Rutas = () => {
@@ -25,12 +26,19 @@ export const Rutas = () => {
                     <Route path='/inicio' element={<Inicio />} />
                     <Route path='/articulos' element={<Articulos />} />
                     <Route path='/crear-articulos' element={<Crear />} />
+                    <Route path='/buscar/:busqueda' element={<Busqueda />} />
+
+                    <Route path='*' element={
+                        <div className='jumbo' >
+                            <h1>Error 404</h1>
+                        </div>
+                    } />
                 </Routes>
             </section>
 
-            <Sidebar/>
+            <Sidebar />
 
-            <Footer/>
+            <Footer />
 
         </BrowserRouter>
 
