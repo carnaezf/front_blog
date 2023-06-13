@@ -120,7 +120,6 @@ body {
 
 .articulo-item .mask img {
   width: auto;
-
 }
 
 .articulo-item h3 {
@@ -138,6 +137,11 @@ body {
 
 .articulo-item .edit {
   margin-right: 20px;
+  margin: 5px;
+}
+
+.form-group .mask {
+  width: auto;
 }
 
 
@@ -169,6 +173,7 @@ body {
 
 .button,
 button,
+.edit,
 input[type='submit'],
 input[type='button'] {
   text-decoration: none;

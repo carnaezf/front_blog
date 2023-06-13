@@ -10,7 +10,6 @@ export const Articulo = () => {
   const [articulo, setArticulo] = useState({});
   const [cargando, setCargando] = useState(true);
   const params = useParams();
-  console.log(params)
 
   useEffect(() => {
     conseguirArticulo();
@@ -23,11 +22,10 @@ export const Articulo = () => {
     console.log(datos);
 
     if (datos.status === 'success') {
-      // setArticulos([]);
+
       setArticulo(datos.article);
     }
     setCargando(false);
-    console.log("ARTICULO", articulo);
   }
 
 
@@ -41,7 +39,7 @@ export const Articulo = () => {
           </div>
           <h1>{articulo.title}</h1>
           <p>{articulo.content}</p>
-          <span>{ articulo.date }</span>
+          <span>{articulo.date}</span>
         </>
       }
     </div>

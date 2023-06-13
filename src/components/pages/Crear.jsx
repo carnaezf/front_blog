@@ -8,9 +8,6 @@ export const Crear = () => {
   const { formulario, enviado, cambiado } = useForm({});
   const [resultado, setResultado] = useState('no_enviado')
 
-  console.log('Primer resultado', resultado);
-
-
   const guardarArticulo = async (e) => {
     e.preventDefault();
 
@@ -20,15 +17,11 @@ export const Crear = () => {
     // Guardar articulos en el backend.
     const { datos } = await Peticion(Global.url + 'create', 'POST', nuevoArticulo);
 
-    console.log('Datos', datos);
-
     if (datos.status === 'success') {
       setResultado('Guardado');
     } else {
       setResultado('Error');
     }
-
-    console.log('Segundo resultado', resultado);
 
     // Subir la imagen
     const fileInput = document.querySelector('#file');
@@ -49,7 +42,7 @@ export const Crear = () => {
     } else {
       setResultado('Error');
     }
-    console.log('Tercer resultado', resultado);
+    console.log(resultado);
   }
 
   return (
