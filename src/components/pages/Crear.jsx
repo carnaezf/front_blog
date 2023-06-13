@@ -3,12 +3,13 @@ import { useForm } from '../../hooks/useForm';
 import { Peticion } from '../../helpers/Peticion';
 import { Global } from '../../helpers/Global';
 
-
 export const Crear = () => {
-
 
   const { formulario, enviado, cambiado } = useForm({});
   const [resultado, setResultado] = useState('no_enviado')
+
+  console.log('Primer resultado', resultado);
+
 
   const guardarArticulo = async (e) => {
     e.preventDefault();
@@ -17,47 +18,48 @@ export const Crear = () => {
     let nuevoArticulo = formulario;
 
     // Guardar articulos en el backend.
-    const { datos, cargando } = await Peticion(Global.url + 'create', 'POST', nuevoArticulo);
+    const { datos } = await Peticion(Global.url + 'create', 'POST', nuevoArticulo);
 
-    if ( datos.status === 'success' ) {
-      setResultado
+    console.log('Datos', datos);
+
+    if (datos.status === 'success') {
+      setResultado('Guardado');
     } else {
-      setResultado('Error al subir la imagen');
+      setResultado('Error');
     }
+
+    console.log('Segundo resultado', resultado);
 
     // Subir la imagen
     const fileInput = document.querySelector('#file');
 
-    if (datos.status === 'success' && fileInput.files[0] ) {
+    if (datos.status === 'success' && fileInput.files[0]) {
       setResultado('Guardado');
-
 
       const formData = new FormData();
       formData.append('file0', fileInput.files[0]);
 
       const subirImagen = await Peticion(Global.url + 'subir-imagen/' + datos.article._id, 'POST', formData, true);
-      console.log(subirImagen);
-      if ( subirImagen.datos.status === 'success' ) {
-        setResultado
-      } else {
-        setResultado('Error al subir la imagen');
-      }
 
-    }
-    else {
+      if (subirImagen.datos.status === 'success') {
+        setResultado('Guardado');
+      } else {
+        setResultado('Error');
+      }
+    } else {
       setResultado('Error');
     }
+    console.log('Tercer resultado', resultado);
   }
-
 
   return (
     <div className='jumbo' >
       <h1>Crear Artículo</h1>
       <p>Formulario para crear un artículo</p>
-      <pre>{JSON.stringify(formulario)}</pre>
+      {/* <pre>{JSON.stringify(formulario)}</pre> */}
 
-      <strong>{resultado === 'Guardado' ? 'Artículo guardado con exito' : ''}</strong>
-      <strong>{resultado === 'Error' ? 'Los datos proporcionados son incorrectos' : ''}</strong>
+      <strong>{resultado == 'Guardado' ? 'Artículo guardado con exito' : ''}</strong>
+      <strong>{resultado == 'Error' ? 'Los datos proporcionados son incorrectos' : ''}</strong>
 
       {/* montar  formulario*/}
       <form className="formulario" onSubmit={guardarArticulo} >
