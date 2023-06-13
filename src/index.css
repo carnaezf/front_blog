@@ -127,6 +127,15 @@ body {
   font-size: 30px;
 }
 
+.articulo-item h3 a{
+  text-decoration: none;
+  color: black;
+}
+
+.articulo-item h3 a:hover{
+  color:#0e73e4 ;
+}
+
 .articulo-item .edit {
   margin-right: 20px;
 }
@@ -151,6 +160,11 @@ body {
 .jumbo p {
   display: block;
   margin-bottom: 40px;
+}
+
+.jumbo .mask{
+  width: 100%;
+  overflow: hidden;
 }
 
 .button,

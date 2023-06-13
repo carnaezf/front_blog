@@ -1,6 +1,7 @@
-import React from 'react'
-import { Global } from '../../helpers/Global'
-import { Peticion } from '../../helpers/Peticion'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Global } from '../../helpers/Global';
+import { Peticion } from '../../helpers/Peticion';
 
 const Listado = ({ articulos, setArticulos }) => {
 
@@ -32,7 +33,7 @@ const Listado = ({ articulos, setArticulos }) => {
                     </div>
 
                     <div className='data'>
-                        <h3 className='title'>{articulo.title}</h3>
+                        <h3 className='title'><Link to={ '/articulo/' + articulo._id }>{articulo.title}</Link></h3>
                         <p className='description' >{articulo.content}</p>
                         <button className='edit'>Editar</button>
                         <button className='delete' onClick={ () => {
