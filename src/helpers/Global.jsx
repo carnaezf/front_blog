@@ -1,7 +1,7 @@
 
 export const Global = {
 
-    url: process.env.BACK_URL
+    url: 'https://api-blog-production-88c5.up.railway.app'
 
 }
 
