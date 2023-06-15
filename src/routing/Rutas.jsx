@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route, BrowserRouter, Navigate } from 'react-router-dom';
+import { Routes, Route, HashRouter, Navigate } from 'react-router-dom';
 import { Inicio } from '../components/pages/Inicio';
 import { Articulos } from '../components/pages/Articulos';
 import { Articulo } from '../components/pages/Articulo';
@@ -15,7 +15,7 @@ import { Editar } from '../components/pages/Editar';
 export const Rutas = () => {
     return (
 
-        <BrowserRouter>
+        <HashRouter>
             {/* Layout */}
             <Header />
             <Nav />
@@ -44,7 +44,7 @@ export const Rutas = () => {
 
             <Footer />
 
-        </BrowserRouter>
+        </HashRouter>
 
     )
 }
