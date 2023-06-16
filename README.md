@@ -1,24 +1,22 @@
-¡Claro! Aquí tienes un ejemplo de un archivo Markdown (`.md`) para el README de un repositorio llamado `api_blog` que utiliza MongoDB, Express y Node.js para crear una API con diferentes endpoints para realizar solicitudes desde el front-end, como subir artículos, subir imágenes, enviar artículos, borrar artículos, etc.
-
 ```markdown
-# API Blog
+# Frontend Blog
 
-Este repositorio contiene el código fuente de una API para un blog, desarrollada con MongoDB, Express y Node.js. La API proporciona varios endpoints para realizar solicitudes desde el front-end, como subir artículos, subir imágenes, enviar artículos, borrar artículos, etc.
+Este repositorio contiene el código fuente del frontend de una aplicación web para visualizar un blog. La aplicación está desarrollada con Vite, React y JavaScript. Permite a los usuarios leer artículos, borrarlos, realizar búsquedas, y más.
 
 ## Configuración
 
-Asegúrate de tener instalado [MongoDB](https://www.mongodb.com/), [Node.js](https://nodejs.org/) y [npm](https://www.npmjs.com/) en tu entorno de desarrollo.
+Asegúrate de tener instalado [Node.js](https://nodejs.org/) y [npm](https://www.npmjs.com/) en tu entorno de desarrollo.
 
 1. Clona este repositorio:
 
 ```bash
-git clone https://github.com/tu-usuario/api_blog.git
+git clone https://github.com/tu-usuario/front_blog.git
 ```
 
 2. Navega al directorio del proyecto:
 
 ```bash
-cd api_blog
+cd front_blog
 ```
 
 3. Instala las dependencias del proyecto:
@@ -27,36 +25,34 @@ cd api_blog
 npm install
 ```
 
-4. Configura las variables de entorno:
-
-Crea un archivo `.env` en el directorio raíz del proyecto y proporciona los siguientes valores:
-
-```plaintext
-MONGODB_URI=URI_de_tu_instancia_de_MongoDB
-```
-
 ## Uso
 
-Para iniciar el servidor de desarrollo, ejecuta el siguiente comando:
+Para iniciar la aplicación en modo de desarrollo, ejecuta el siguiente comando:
 
 ```bash
-npm start
+npm run dev
 ```
 
-El servidor se ejecutará en `http://localhost:3000`.
+La aplicación se ejecutará en `http://localhost:3000`.
 
-## Endpoints
+## Funcionalidades
 
-A continuación se enumeran los principales endpoints disponibles en esta API:
+A continuación se describen las principales funcionalidades disponibles en esta aplicación:
 
-- `POST /articles`: Crea un nuevo artículo.
-- `POST /articles/upload`: Sube una imagen relacionada con un artículo.
-- `GET /articles`: Obtiene todos los artículos.
-- `GET /articles/:id`: Obtiene un artículo específico por su ID.
-- `PUT /articles/:id`: Actualiza un artículo existente.
-- `DELETE /articles/:id`: Elimina un artículo existente.
+- Visualización de artículos: Permite a los usuarios leer artículos del blog.
+- Eliminación de artículos: Los usuarios pueden borrar artículos existentes.
+- Búsqueda de artículos: Se proporciona una función de búsqueda para encontrar artículos por título o contenido.
 
-**Importante**: Para acceder a los endpoints que requieren autenticación, se debe proporcionar un token válido en el encabezado `Authorization`.
+## Estructura del proyecto
+
+El proyecto sigue la siguiente estructura de directorios:
+
+- `src`: Contiene el código fuente de la aplicación.
+  - `components`: Componentes reutilizables de React.
+  - `pages`: Páginas principales de la aplicación.
+  - `services`: Módulos para realizar solicitudes a la API del backend.
+  - `utils`: Utilidades y funciones auxiliares.
+- `public`: Archivos estáticos, como imágenes y archivos CSS.
 
 ## Contribuir
 
@@ -72,7 +68,3 @@ Si deseas contribuir a este proyecto, puedes seguir los pasos a continuación:
 
 Este proyecto está licenciado bajo la [MIT License](LICENSE).
 ```
-
-Asegúrate de reemplazar `tu-usuario` en los comandos de clonación y URL del repositorio por tu nombre de usuario de GitHub. Además, recuerda incluir la licencia correspondiente en un archivo llamado `LICENSE` en el directorio raíz del proyecto si deseas utilizar una licencia diferente.
-
-Este es solo un ejemplo y puedes modificarlo según tus necesidades específicas. ¡Espero que esto te ayude a crear tu README de GitHUb!
