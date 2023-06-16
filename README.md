@@ -10,7 +10,7 @@ Asegúrate de tener instalado [Node.js](https://nodejs.org/) y [npm](https://www
 1. Clona este repositorio:
 
 ```bash
-git clone https://github.com/tu-usuario/front_blog.git
+git clone https://github.com/carnaezf/front_blog.git
 ```
 
 2. Navega al directorio del proyecto:
@@ -50,8 +50,6 @@ El proyecto sigue la siguiente estructura de directorios:
 - `src`: Contiene el código fuente de la aplicación.
   - `components`: Componentes reutilizables de React.
   - `pages`: Páginas principales de la aplicación.
-  - `services`: Módulos para realizar solicitudes a la API del backend.
-  - `utils`: Utilidades y funciones auxiliares.
 - `public`: Archivos estáticos, como imágenes y archivos CSS.
 
 ## Contribuir
